@@ -1,148 +1,149 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    scroll-behavior: smooth;
-    font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  font-family: sans-serif;
 }
 
 #home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../bg1.jpg);
-    height: 110vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/bg1.jpg);
+  height: 110vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #home .nav-bar {
-    background: linear-gradient(rgba(61, 23, 201, 0.5), rgba(10, 25, 167, 0.6));
-    display: flex;
-    padding: 0 10%;
-    align-items: center;
-    justify-content: space-between;
-    /* position: fixed;
+  background: linear-gradient(rgba(61, 23, 201, 0.5), rgba(10, 25, 167, 0.6));
+  display: flex;
+  padding: 0 10%;
+  align-items: center;
+  justify-content: space-between;
+  /* position: fixed;
     top: 0;
     width: 100%;
     transition: top 0.3s; */
 }
 
 #home .nav-bar .menu ul {
-    display: flex;
+  display: flex;
 }
 
 #home .nav-bar .menu ul li {
-    margin: 50px 0px;
-    list-style: none;
-    color: white;
+  margin: 50px 0px;
+  list-style: none;
+  color: white;
 }
 
 #home .nav-bar .menu ul li:not(:last-child)::after {
-    content: "/";
-    color: white;
-    padding: 30px;
-    font-weight: bold;
-    justify-content: center;
+  content: "/";
+  color: white;
+  padding: 30px;
+  font-weight: bold;
+  justify-content: center;
 }
 
 #home .nav-bar .menu ul li a {
-    text-decoration: none;
-    color: whitesmoke;
-    font-size: .9rem;
-    font-weight: bold;
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 #home .nav-bar .menu ul li a:hover {
-    color: green;
-    transition: .5s;
+  color: green;
+  transition: 0.5s;
 }
 
 #home .nav-bar .logo img {
-    height: 50px;
+  height: 50px;
 }
 
 .hero {
-    color: white;
-    display: flex;
-    width: 80%;
-    margin: auto;
-    align-items: center;
-    height: 80%;
+  color: white;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  height: 80%;
 }
 
 .hero .content {
-    font-size: 1.1rem;
-    padding: 0px 80px;
+  font-size: 1.1rem;
+  padding: 0px 80px;
 }
 
 .hero .content .content-color {
-    color: green;
+  color: green;
 }
 
 .hero .content .line {
-    margin: 10px 0;
-    border: 1px solid white;
+  margin: 10px 0;
+  border: 1px solid white;
 }
 
 .hero .content .line1 {
-    width: 140px;
+  width: 140px;
 }
 
 .hero .content .line2 {
-    width: 110px;
+  width: 110px;
 }
 
 .hero .content .line3 {
-    width: 80px
+  width: 80px;
 }
 
 .hero .form-area {
-    padding: 40px 50px;
-    /* background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); */
-    border-radius: 35px;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.2);
+  padding: 40px 50px;
+  /* background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); */
+  border-radius: 35px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .hero .form-area h3 {
-    font-size: 1.5rem;
-    padding: 0 0 60px 0;
-    text-align: center;
+  font-size: 1.5rem;
+  padding: 0 0 60px 0;
+  text-align: center;
 }
 
 .hero .form-area .line {
-    margin: 5px 43px;
-    width: 95px;
-    border: 1px solid black;
+  margin: 5px 43px;
+  width: 95px;
+  border: 1px solid black;
 }
 
 .hero .form-area .form form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero .form-area .form form .form-content {
-    padding: 0 0 30px 0;
+  padding: 0 0 30px 0;
 }
 
 .hero .form-area input {
-    height: 35px;
-    width: 280px;
+  height: 35px;
+  width: 280px;
 }
 
 .hero .form-area input:focus {
-    outline: none;
+  outline: none;
 }
 
 .hero .form-area .form a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    border: 2px solid green;
-    padding: 10px 35px;
-    border-radius: 35px;
-    transition: background-color .4s ease-in-out;
-    margin: 60px 0 0 150px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid green;
+  padding: 10px 35px;
+  border-radius: 35px;
+  transition: background-color 0.4s ease-in-out;
+  margin: 60px 0 0 150px;
 }
 
 .hero .form-area .form a:hover {
-    background-color: green;
+  background-color: green;
 }
