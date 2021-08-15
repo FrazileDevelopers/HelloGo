@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/main.js"></script>
-    <title>{{.}}!</title>
+    <title>{{.name}}</title>
 </head>
 
 <body>
@@ -23,15 +23,14 @@
                 </ul>
             </div>
             <div class="logo">
-                <img src="logo.jpeg" alt="CelloTAX.COM">
-                <!-- <h1>CelloTAX.com</h1> -->
+                <img src="logo.jpeg" alt="logo">
             </div>
         </div>
 
         <div class="hero">
             <div class="content">
                 <h1>
-                    <Span class="content-color">Hello there!</Span> I,m A Professional <br><span class="content-color typed"></span>
+                    <Span class="content-color">Hello {{.name}}!</Span> I,m A Professional <br><span class="content-color typed"></span>
                 </h1>
                 <hr class="line1 line">
                 <hr class="line2 line">
