@@ -17,7 +17,7 @@ import (
 */
 
 var tpl *template.Template
-var name = "Parth"
+var name = "Madhav"
 
 func main() {
 	/* Added html files */
