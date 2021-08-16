@@ -1,11 +1,14 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 //  {{/* a comment */}}	Defines a comment
@@ -18,6 +21,13 @@ import (
 
 var tpl *template.Template
 var name = "Madhav"
+
+type User struct {
+	Fname    string `json:"fname"`
+	Lname    string `json:"lname"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
 
 func main() {
 	/* Added html files */
@@ -43,6 +53,51 @@ func main() {
 	log.Printf("Listening on port %s", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
+	}
+
+	/// MySQL Implementation
+	fmt.Println("Go Mysql =>")
+
+	db, dberr := sql.Open("mysql", "root:FrazileGo@0511@34.133.196.208/users")
+
+	if dberr != nil {
+		panic(dberr.Error())
+	}
+
+	defer db.Close()
+
+	fmt.Println("Successfully Connected to MySQL Database")
+
+	// insert, err := db.Query("INSERT INTO users SET name='Parth Aggarwal'")
+
+	// if err != nil {
+	// 	panic(err.Error())
+	// }
+
+	// defer insert.Close()
+
+	// fmt.Println("Successfully Inserted to USERS Table into FRAZILE Database")
+
+	// Initialize the first connection to the database, to see if everything works correctly.
+	// Make sure to check the error.
+	err := db.Ping()
+
+	results, err := db.Query("SELECT * FROM users")
+
+	if err != nil {
+		panic(err.Error())
+	}
+
+	for results.Next() {
+		var user User
+
+		err = results.Scan(&user.Fname)
+
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Println(user.Fname)
 	}
 }
 
