@@ -31,16 +31,20 @@ func main() {
 	tpl, _ = tpl.ParseGlob("templates/*.html")
 
 	/* Added css Directory */
-	fs := http.FileServer(http.Dir("templates/css/"))
-	http.Handle("/css/", http.StripPrefix("/css/", fs))
+	fs := http.FileServer(http.Dir("templates/assets/css/"))
+	http.Handle("/assets/css/", http.StripPrefix("/assets/css/", fs))
 
 	/* Added js Directory */
-	js := http.FileServer(http.Dir("templates/js/"))
-	http.Handle("/js/", http.StripPrefix("/js/", js))
+	js := http.FileServer(http.Dir("templates/assets/js/"))
+	http.Handle("/js/", http.StripPrefix("/assets/js/", js))
 
 	/* Added images Directory */
-	images := http.FileServer(http.Dir("templates/images/"))
-	http.Handle("/images/", http.StripPrefix("/images/", images))
+	images := http.FileServer(http.Dir("templates/assets/images/"))
+	http.Handle("/assets/images/", http.StripPrefix("/assets/images/", images))
+
+	/* Added plugins Directory */
+	plugins := http.FileServer(http.Dir("templates/assets/plugins/"))
+	http.Handle("/assets/plugins/", http.StripPrefix("/assets/plugins/", plugins))
 
 	http.HandleFunc("/", handle)
 	port := os.Getenv("PORT")
