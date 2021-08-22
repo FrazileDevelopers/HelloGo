@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
 	"html/template"
 	"log"
@@ -54,17 +53,17 @@ func main() {
 	}
 
 	/// MySQL Implementation
-	fmt.Println("Go Mysql =>")
+	// fmt.Println("Go Mysql =>")
 
-	db, dberr := sql.Open("mysql", "root:FrazileGo@0511@34.133.196.208/users")
+	// db, dberr := sql.Open("mysql", "root:FrazileGo@0511@34.133.196.208/users")
 
-	if dberr != nil {
-		panic(dberr.Error())
-	}
+	// if dberr != nil {
+	// 	panic(dberr.Error())
+	// }
 
-	defer db.Close()
+	// defer db.Close()
 
-	fmt.Println("Successfully Connected to MySQL Database")
+	// fmt.Println("Successfully Connected to MySQL Database")
 
 	// insert, err := db.Query("INSERT INTO users SET name='Parth Aggarwal'")
 
@@ -78,25 +77,25 @@ func main() {
 
 	// Initialize the first connection to the database, to see if everything works correctly.
 	// Make sure to check the error.
-	err := db.Ping()
+	// err := db.Ping()
 
-	results, err := db.Query("SELECT * FROM users")
+	// results, err := db.Query("SELECT * FROM users")
 
-	if err != nil {
-		panic(err.Error())
-	}
+	// if err != nil {
+	// 	panic(err.Error())
+	// }
 
-	for results.Next() {
-		var user User
+	// for results.Next() {
+	// 	var user User
 
-		err = results.Scan(&user.Fname)
+	// 	err = results.Scan(&user.Fname)
 
-		if err != nil {
-			panic(err)
-		}
+	// 	if err != nil {
+	// 		panic(err)
+	// 	}
 
-		fmt.Println(user.Fname)
-	}
+	// 	fmt.Println(user.Fname)
+	// }
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
